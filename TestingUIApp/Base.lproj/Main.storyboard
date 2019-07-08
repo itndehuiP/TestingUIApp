@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestingUIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDT-g5-520">
+                                <rect key="frame" x="172" y="413" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="FbG-bc-S40"/>
+                                    <constraint firstAttribute="height" constant="70" id="iVG-8u-4AX"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="unchecked"/>
+                                <connections>
+                                    <action selector="checkButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="22d-4m-3g3"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-hg-KSJ">
+                                <rect key="frame" x="50" y="244" width="314" height="149"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ugo-F8-DuV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4de-Hw-Imm"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DgM-hg-KSJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="E7n-Lc-EUV"/>
+                            <constraint firstItem="DgM-hg-KSJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Vc6-qA-AZU"/>
+                            <constraint firstItem="zDT-g5-520" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="c0g-KC-VEJ"/>
+                            <constraint firstItem="zDT-g5-520" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ga8-bo-vI8"/>
+                            <constraint firstItem="zDT-g5-520" firstAttribute="top" secondItem="DgM-hg-KSJ" secondAttribute="bottom" constant="20" id="qCt-KY-Ind"/>
+                            <constraint firstAttribute="trailing" secondItem="DgM-hg-KSJ" secondAttribute="trailing" constant="50" id="yf5-6D-9Xu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="agreementButton" destination="zDT-g5-520" id="FJn-4s-1XH"/>
+                        <outlet property="condominiumPicker" destination="DgM-hg-KSJ" id="efg-8h-iyd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="unchecked" width="500" height="500"/>
+    </resources>
 </document>
